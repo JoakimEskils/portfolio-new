@@ -38,8 +38,9 @@ projects:
   tags: ["hobby"]
 
 - name: Blackjack simulation in Haskell
+  logo: /images/sections/skills/haskel.png
   role: Developer
   timeline: "Oct 2020 - Nov 2020"
-  url: "https://github.com/JoakimEskils/blackjack"
+  repo: "https://github.com/JoakimEskils/blackjack"
   summary: Interactive blackjack game written in Haskell, using stack.
   tags: ["hobby"]
