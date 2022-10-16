@@ -11,54 +11,54 @@ section:
 # Your experiences
 experiences:
 - company:
-    name: Example Co.
-    url: "https://www.example.com"
-    location: Dhaka Branch
+    name: Bricco AB
+    url: "https://"
+    location: Stockholm, Sweden
     # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    overview: Consultancy in software engineering and architecture.
   positions:
-  - designation: Senior Software Engineer
-    start: Nov 2019
+  - designation: Software Engineer
+    start: Oct 2022
     # don't provide end date if you are currently working there. It will be replaced by "Present"
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
-
-  - designation: Junior Software Engineer
-    start: Nov 2017
-    end: Oct 2019
-    responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
+    - Functioning as a software architect and engineering consultant towards several client projects consisting of full-stack development, cloud infrastructure, database management, and software architecture design. Nodejs, Express, Reactjs, Typescript, and Apollo (GraphQL) are mainly used for building and maintaining software. Other tools used were MongoDB (NoSQL Database), CircleCI (CI/CD Tool), Material UI (React), Google Cloud Platform, Github Actions, Jira, Bitbucket, and Vercel.
 
 - company:
-    name: PreExample Co.
-    url: "https://www.example.com"
-    location: Nowhere
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    name: Klarna
+    url: "https://"
+    location: Stockholm, Sweden
+    overview: Klarna is a Swedish fintech company that provides online financial services such as payments for online storefronts and direct payments along with post-purchase payments..
   positions:
   - designation: Software Engineer
-    start: March 2016
-    end: May 2017
+    start: Nov 2021
+    end: Oct 2022
     responsibilities:
-    - Write lots of example codes.
-    - Read lots of examples.
-    - See lots of example videos.
+    - Handling the issuing and lifecycle of credit and debit cards. The microservices developed in the platform are mainly written in Scala using the functional programming paradigm (Typelevel-stack such as cats and fs2), but also in Haskell for serverless AWS Lambdas. Other tools used are Terraform, Ansible, Docker, Http4s (Scala), AWS (RDS, Route53, EC2, S3), Sbt (Scala), Jenkins, Kafka, Event-sourcing (Database architecture), Typescript/Reactjs, Postgres (SQL), Nix (OS, Build-tool), Bitbucket, and Jira.
 
 - company:
-    name: Intern Counting Company (ICC).
-    url: "https://www.example.com"
-    location: Intern Land
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+    name: Bricco AB
+    url: "https://"
+    location: Stockholm, Sweden
+    # company overview
+    overview: Consultancy in software engineering and architecture.
   positions:
-  - designation: Intern
-    start: Jun 2015
-    end: Jan 2016
+  - designation: Software Developer
+    start: Jun 2020
+    end: Sep 2021
     responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - Consultant in a team towards projects focused on full-stack development, cloud infrastructure, database management, and software architecture. Nodejs, Express, Reactjs, Typescript, and Apollo (GraphQL) were mainly used for building and maintaining software. Other tools used were MongoDB (NoSQL Database), CircleCI (CI/CD Tool), Material UI (React), Google Cloud Platform, Github Actions, Jira, Bitbucket, and Vercel.
+
+- company:
+    name: Saab
+    url: "https://"
+    location: Järfälla, Sweden
+    # company overview
+    overview: Saab serves the global market with world-leading products, services and solutions from military defence in all domains to civil security.
+  positions:
+  - designation: Software Engineer Intern
+    start: Jun 2019
+    end: Aug 2019
+    responsibilities:
+    - Developed support systems for electronic warfare and airborne platforms using Java.
