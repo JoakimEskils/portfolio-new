@@ -11,39 +11,42 @@ section:
 # Your Skills.
 # Give a summary of you each skill in the summary section.
 skills:
-- name: Kubernetes
-  logo: /images/sections/skills/kubernetes.png
-  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
-  url: "https://kubernetes.io/"
+- name: Node.js (Typescript)
+  logo: /images/sections/skills/node.png
+  summary: "Currently using as the main language for professional development. Capable of writing scalable, testable, and maintainable software."
+  url: "https://nodejs.org/en/"
+   
+- name: React.js (Typescript)
+  logo: /images/sections/skills/react.png
+  summary: "Using as the main language for front end development. Capable of using Apollo (GraphQL) and Rest APIs to communicate with backend. Experience in Material UI."
+  url: "https://reactjs.org/"
 
-- name: Go Development
-  logo: /images/sections/skills/go.png
-  summary: "Using as the main language for professional development. Capable of writing scalable, testable, and maintainable program."
-  url: "https://golang.org/"
+- name: Databases
+  logo: /images/sections/skills/db.png
+  summary: "Capable of setup, configure databases using MongoDB and PostgreSQL. Experienced with hosting in AWS, and MongoDB Atlas. Also, experienced with writing advanced queries and aggregates."
+  url: "https://www.mongodb.com/"
 
-- name: Cloud Computing
+- name: Scala
+  logo: /images/sections/skills/scala.svg
+  summary: "Worked with Scala mainly using the functional programming paradigm along with the Typelevel-stack (cats and fs2)."
+  url: "https://www.scala-lang.org/"
+
+- name: Cloud infrastructure
   logo: /images/sections/skills/cloud.png
-  summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
+  summary: "Capable of configuring RDS, Route53, EC2, S3 in AWS and similarly in Google Cloud Platform (GCP)."
+  url: "https://aws.amazon.com/"
 
 - name: Docker
   logo: /images/sections/skills/docker.svg
-  summary: "Write most of the programs as dockerized container. Experienced with multi-stage, multi-arch build process."
+  summary: "Experience writing software running as containers."
   url: "https://www.docker.com/"
 
-- name: Prometheus
-  logo: /images/sections/skills/prometheus.png
-  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
-  url: "https://prometheus.io/"
+- name: GraphQl
+  logo: /images/sections/skills/graph.svg
+  summary: "Using GraphQl to communicate between backend and frontend."
+  url: "https://graphql.org/"
 
-- name: Linux
-  logo: /images/sections/skills/linux.png
-  summary: "Using as the main operating system. Capable of writing bash/shell scripts."
-
-- name: Git
-  logo: /images/sections/skills/git.png
-  summary: "Experienced with git-based development. Mostly, use Github. Also, have experience in working with GitLab."
-  url: "https://git-scm.com/"
-
-- name: C++
-  logo: /images/sections/skills/c++.png
-  summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+- name: Haskell
+  logo: /images/sections/skills/haskel.png
+  summary: "Used basic Haskell programming in production. Used for developing serverless AWS Lambdas."
+  url: "https://www.haskell.org/"
