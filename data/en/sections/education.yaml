@@ -18,7 +18,7 @@ degrees:
     url: "https://www.uu.se/"
   takenCourses: #(optional)
     # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
-    collapseAfter: 3
+    collapseAfter: 5
     courses:
     - name: Algorithms and Data Structures II
       achieved: 3.80
@@ -29,19 +29,19 @@ degrees:
     - name: Artificial Intelligence
       achieved: 3.5
       outOf: 4
+    - name: Imperative and Object-Oriented Programming Methodology
+      achieved: 3.75
+      outOf: 4
+    - name: Low-Level Parallel Programming
+      achieved: 3.75
+      outOf: 4
     - name: Automata Theory
       achieved: 3.75
       outOf: 4
     - name: Computer Architecture
       achieved: 3.75
       outOf: 4
-    - name: Linear Algebra and Geometry I
-      achieved: 3.75
-      outOf: 4
     - name: Logic and Proof Techniques I
-      achieved: 3.75
-      outOf: 4
-    - name: Low-Level Parallel Programming
       achieved: 3.75
       outOf: 4
     - name: Operating Systems and Process-Oriented Programming
@@ -59,6 +59,9 @@ degrees:
     - name: Secure Computer Systems I
       achieved: 3.75
       outOf: 4
+    - name: Linear Algebra and Geometry I
+      achieved: 3.75
+      outOf: 4
     - name: Computer Networks I
       achieved: 3.80
       outOf: 4
@@ -66,9 +69,6 @@ degrees:
       achieved: 3.5
       outOf: 4
     - name: Database Design II
-      achieved: 3.75
-      outOf: 4
-    - name: Imperative and Object-Oriented Programming Methodology
       achieved: 3.75
       outOf: 4
     - name: Information Technology
@@ -87,10 +87,10 @@ degrees:
       achieved: 3.80
       outOf: 4
   publications: #(optional)
-  - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    url: "#"
-  - title: Fusce eu augue ut odio porttitor pulvinar.
-    url: "#"
+  #- title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  #  url: "#"
+  #- title: Fusce eu augue ut odio porttitor pulvinar.
+  #  url: "#"
   extracurricularActivities: #(optional)
   - Teaching assistant in Program Design and Data Structures 1DL201 (Haskell).
   - Teaching assistant in Computer Programming I UU-12031 (Python).
