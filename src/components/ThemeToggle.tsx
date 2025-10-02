@@ -6,8 +6,10 @@ import { Sun, Moon } from 'lucide-react';
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -43,10 +45,10 @@ export default function ThemeToggle() {
     >
       <motion.div
         initial={false}
-        animate={{ rotate: isDark ? 180 : 0 }}
+        animate={{ rotate: mounted && isDark ? 180 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+        {mounted && isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
       </motion.div>
     </motion.button>
   );

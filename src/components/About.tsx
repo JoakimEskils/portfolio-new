@@ -3,54 +3,54 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Code, Database, Cpu, GitBranch } from 'lucide-react';
+import { Code, Database, Server, Zap } from 'lucide-react';
 
 export default function About() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        delayChildren: 0.1,
+        staggerChildren: 0.05
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 10, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
+        duration: 0.3
       }
     }
   };
 
-  const skills = [
+  const expertise = [
     {
-      icon: Code,
+      icon: <Server className="h-6 w-6" />,
       title: 'Backend Development',
-      description: 'Building robust server-side applications with Node.js, TypeScript, and functional programming languages like Haskell and Elixir.'
+      description: 'Building scalable server-side applications with Node.js, Express, and Phoenix Framework'
     },
     {
-      icon: Database,
+      icon: <Database className="h-6 w-6" />,
       title: 'Database Management',
-      description: 'Designing and optimizing database schemas, working with PostgreSQL, MongoDB, and implementing efficient data access patterns.'
+      description: 'Designing and optimizing PostgreSQL and MongoDB databases for high-performance applications'
     },
     {
-      icon: Cpu,
-      title: 'System Architecture',
-      description: 'Designing distributed systems, microservices architecture, and scalable solutions for high-performance applications.'
-    },
-    {
-      icon: GitBranch,
+      icon: <Code className="h-6 w-6" />,
       title: 'Functional Programming',
-      description: 'Applying functional programming principles, working with immutable data structures and pure functions for reliable code.'
+      description: 'Expertise in Haskell and Elixir for building robust, maintainable software systems'
+    },
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: 'System Architecture',
+      description: 'Designing distributed systems and microservices architectures for enterprise applications'
     }
   ];
 
@@ -68,60 +68,32 @@ export default function About() {
               About Me
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              I'm a passionate software engineer with a focus on backend development, 
-              database management, and distributed systems. I love solving complex problems 
-              and building scalable solutions.
+              Software Engineer at Bricco AB specializing in server-side development, database management, 
+              functional programming, and distributed systems architecture.
             </p>
           </motion.div>
 
-          <motion.div 
-            variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
-          >
-            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm transition-all duration-300 hover:shadow-md">
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-                My Journey
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                Currently working as a Software Engineer at Bricco AB, where I focus on 
-                building robust backend systems and optimizing database performance. 
-                I have a strong foundation in functional programming and enjoy exploring 
-                new technologies and architectural patterns.
-              </p>
-            </div>
-            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm transition-all duration-300 hover:shadow-md">
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-4">
-                What I Do
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                I specialize in server-side development, working with modern technologies 
-                to build scalable applications. My expertise includes database design, 
-                API development, and implementing distributed systems that can handle 
-                high loads efficiently.
-              </p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {expertise.map((item, index) => (
               <motion.div
-                key={skill.title}
+                key={item.title}
                 variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm transition-all duration-300 hover:shadow-md text-center group"
+                className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition-all duration-200 hover:scale-105"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg mb-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                  <skill.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <div className="flex items-center mb-4">
+                  <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 mr-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    {item.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
-                  {skill.title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {skill.description}
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {item.description}
                 </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

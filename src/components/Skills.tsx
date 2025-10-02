@@ -6,26 +6,26 @@ import { useRef } from 'react';
 
 export default function Skills() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.1
+        delayChildren: 0.1,
+        staggerChildren: 0.05
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 10, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
+        duration: 0.3
       }
     }
   };
@@ -33,47 +33,27 @@ export default function Skills() {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: [
-        { name: 'TypeScript', level: 90 },
-        { name: 'JavaScript', level: 95 },
-        { name: 'Haskell', level: 85 },
-        { name: 'Elixir', level: 80 },
-        { name: 'Python', level: 75 },
-        { name: 'Scala', level: 70 }
-      ]
+      skills: ['TypeScript', 'JavaScript', 'Haskell', 'Elixir', 'Python', 'Scala', 'Go', 'Rust']
     },
     {
       title: 'Backend Technologies',
-      skills: [
-        { name: 'Node.js', level: 95 },
-        { name: 'Express.js', level: 90 },
-        { name: 'Phoenix Framework', level: 80 },
-        { name: 'REST APIs', level: 95 },
-        { name: 'GraphQL', level: 75 },
-        { name: 'Microservices', level: 85 }
-      ]
+      skills: ['Node.js', 'Express.js', 'Phoenix Framework', 'REST APIs', 'GraphQL', 'Microservices', 'Serverless', 'WebSockets']
     },
     {
       title: 'Databases',
-      skills: [
-        { name: 'PostgreSQL', level: 90 },
-        { name: 'MongoDB', level: 85 },
-        { name: 'Redis', level: 80 },
-        { name: 'Database Design', level: 90 },
-        { name: 'Query Optimization', level: 85 },
-        { name: 'Data Modeling', level: 80 }
-      ]
+      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Database Design', 'Query Optimization', 'Data Modeling', 'SQL', 'NoSQL']
     },
     {
-      title: 'Tools & Technologies',
-      skills: [
-        { name: 'Docker', level: 85 },
-        { name: 'AWS', level: 75 },
-        { name: 'Git', level: 95 },
-        { name: 'Linux', level: 80 },
-        { name: 'CI/CD', level: 75 },
-        { name: 'Testing', level: 85 }
-      ]
+      title: 'Frontend Technologies',
+      skills: ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'HTML5', 'CSS3']
+    },
+    {
+      title: 'DevOps & Tools',
+      skills: ['Docker', 'AWS', 'Git', 'Linux', 'CI/CD', 'Testing', 'Monitoring', 'Kubernetes']
+    },
+    {
+      title: 'Cloud & Infrastructure',
+      skills: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Monitoring', 'Logging', 'Security', 'Performance']
     }
   ];
 
@@ -88,51 +68,32 @@ export default function Skills() {
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-              Skills & Expertise
+              Skills & Technologies
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              A comprehensive overview of my technical skills and expertise across different domains
+              Technologies and tools I work with
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}
                 variants={itemVariants}
-                className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm transition-all duration-300 hover:shadow-md"
+                className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm transition-all duration-200 hover:shadow-lg hover:scale-105"
               >
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6">
+                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 text-center">
                   {category.title}
                 </h3>
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {category.skills.map((skill, skillIndex) => (
-                    <motion.div
-                      key={skill.name}
+                    <motion.span
+                      key={skill}
                       variants={itemVariants}
-                      className="space-y-2"
+                      className="px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors cursor-default"
                     >
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-slate-500 dark:text-slate-400">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                          transition={{ 
-                            duration: 1, 
-                            delay: 0.5 + (categoryIndex * 0.1) + (skillIndex * 0.05),
-                            ease: "easeOut"
-                          }}
-                          className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full"
-                        />
-                      </div>
-                    </motion.div>
+                      {skill}
+                    </motion.span>
                   ))}
                 </div>
               </motion.div>
