@@ -12,14 +12,12 @@ const nextConfig: NextConfig = {
   // Trailing slash for better compatibility with static hosting
   trailingSlash: true,
   
+  // Disable automatic error pages completely
+  distDir: '.next',
+  
   // Disable server-side features for static export
   experimental: {
     // Enable if you need these features
-  },
-  
-  // Disable automatic error pages for static export
-  generateBuildId: async () => {
-    return 'build-' + Date.now()
   },
   
   // Asset prefix for CDN (optional)

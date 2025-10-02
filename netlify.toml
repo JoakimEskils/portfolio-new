@@ -22,8 +22,8 @@
   # Build optimization
   NODE_OPTIONS = "--max-old-space-size=4096"
   
-  # Ensure devDependencies are installed
-  NODE_ENV = "development"
+  # Use production environment for proper Next.js build
+  NODE_ENV = "production"
 
 # Production context settings
 [context.production]
@@ -31,7 +31,7 @@
   publish = "out"
   
   [context.production.environment]
-    NODE_ENV = "development"
+    NODE_ENV = "production"
 
 # Deploy preview context (for pull requests)
 [context.deploy-preview]
@@ -39,7 +39,7 @@
   publish = "out"
   
   [context.deploy-preview.environment]
-    NODE_ENV = "development"
+    NODE_ENV = "production"
 
 # Branch deploy context
 [context.branch-deploy]
@@ -47,7 +47,7 @@
   publish = "out"
   
   [context.branch-deploy.environment]
-    NODE_ENV = "development"
+    NODE_ENV = "production"
 
 # Development context for Netlify Dev
 [context.dev.environment]
