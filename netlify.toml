@@ -1,8 +1,8 @@
 # Netlify configuration for Joakim Eskils Portfolio
-# Next.js 15 with App Router and Turbopack
+# Next.js 15 with App Router
 
 [build]
-  # Build command with Turbopack for faster builds
+  # Build command without Turbopack for Netlify compatibility
   command = "npm run build"
   
   # Publish directory for Next.js static export

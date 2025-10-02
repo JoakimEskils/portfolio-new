@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "build:local": "next build --turbopack"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
