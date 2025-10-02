@@ -21,6 +21,9 @@
   
   # Build optimization
   NODE_OPTIONS = "--max-old-space-size=4096"
+  
+  # Ensure devDependencies are installed
+  NODE_ENV = "development"
 
 # Next.js plugin for optimal deployment
 [[plugins]]
@@ -32,7 +35,7 @@
   publish = "out"
   
   [context.production.environment]
-    NODE_ENV = "production"
+    NODE_ENV = "development"
 
 # Deploy preview context (for pull requests)
 [context.deploy-preview]
