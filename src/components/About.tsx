@@ -55,7 +55,7 @@ export default function About() {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-white dark:bg-slate-900">
+    <section ref={ref} className="py-16 md:py-24 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -64,10 +64,10 @@ export default function About() {
           className="max-w-6xl mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               About Me
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
               Software Engineer at Bricco AB specializing in server-side development, database management, 
               functional programming, and distributed systems architecture.
             </p>
@@ -78,17 +78,17 @@ export default function About() {
               <motion.div
                 key={item.title}
                 variants={itemVariants}
-                className="p-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                className="p-6 rounded-xl border border-slate-700 bg-gradient-to-br from-slate-800 to-slate-900 hover:shadow-lg transition-all duration-200 hover:scale-105"
               >
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 mr-4">
+                  <div className="p-2 rounded-lg bg-blue-600 text-primary mr-4">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-xl font-semibold text-primary">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                <p className="text-secondary leading-relaxed">
                   {item.description}
                 </p>
               </motion.div>

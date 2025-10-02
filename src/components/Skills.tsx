@@ -58,7 +58,7 @@ export default function Skills() {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-gray-50 dark:bg-slate-800">
+    <section ref={ref} className="py-16 md:py-24 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -67,10 +67,10 @@ export default function Skills() {
           className="max-w-6xl mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Skills & Technologies
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
               Technologies and tools I work with
             </p>
           </motion.div>
@@ -80,9 +80,9 @@ export default function Skills() {
               <motion.div
                 key={category.title}
                 variants={itemVariants}
-                className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm transition-all duration-200 hover:shadow-lg hover:scale-105"
+                className="rounded-xl border border-slate-700 bg-slate-800 p-6 shadow-sm transition-all duration-200 hover:shadow-lg hover:scale-105"
               >
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4 text-center">
+                <h3 className="text-xl font-semibold text-primary mb-4 text-center">
                   {category.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 justify-center">
@@ -90,7 +90,7 @@ export default function Skills() {
                     <motion.span
                       key={skill}
                       variants={itemVariants}
-                      className="px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors cursor-default"
+                      className="px-3 py-1.5 text-sm font-medium text-secondary bg-slate-700 rounded-full hover:bg-slate-600 transition-colors cursor-default"
                     >
                       {skill}
                     </motion.span>

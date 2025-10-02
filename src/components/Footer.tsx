@@ -1,64 +1,54 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: <Github className="h-5 w-5" />,
       href: 'https://github.com/joakimeskils',
       label: 'GitHub'
     },
     {
-      icon: Linkedin,
+      icon: <Linkedin className="h-5 w-5" />,
       href: 'https://www.linkedin.com/in/joakimeskils/',
       label: 'LinkedIn'
     },
     {
-      icon: Mail,
+      icon: <Mail className="h-5 w-5" />,
       href: 'mailto:joakim@example.com',
       label: 'Email'
     }
   ];
 
   return (
-    <footer className="bg-slate-900 dark:bg-slate-950 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-2">Joakim Eskils</h3>
-            <p className="text-slate-400">
-              Software Engineer passionate about building scalable solutions
+    <footer className="bg-slate-900 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p className="text-slate-400 text-sm">
+              © {currentYear} Joakim Eskils. All rights reserved.
             </p>
           </div>
-
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map((social, index) => (
+          
+          <div className="flex space-x-6">
+            {socialLinks.map((link, index) => (
               <motion.a
-                key={social.label}
-                href={social.href}
+                key={link.label}
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-slate-400 hover:text-blue-400 transition-colors duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors text-slate-400 hover:text-white"
-                aria-label={social.label}
+                aria-label={link.label}
               >
-                <social.icon className="h-5 w-5" />
+                {link.icon}
               </motion.a>
             ))}
-          </div>
-
-          <div className="text-center md:text-right">
-            <p className="text-slate-400 flex items-center justify-center md:justify-end">
-              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by Joakim Eskils
-            </p>
-            <p className="text-slate-500 text-sm mt-1">
-              © {currentYear} All rights reserved
-            </p>
           </div>
         </div>
       </div>

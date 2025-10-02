@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className={`${inter.className} bg-gray-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased`}>
+      <body className={`${inter.className} bg-slate-900 text-slate-200 antialiased`} style={{ backgroundColor: '#0f172a', color: '#e2e8f0' }}>
         <Navigation />
         <main>{children}</main>
       </body>

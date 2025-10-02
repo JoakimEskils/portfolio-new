@@ -61,7 +61,7 @@ export default function Experience() {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-gray-50 dark:bg-slate-800">
+    <section ref={ref} className="py-16 md:py-24 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -70,10 +70,10 @@ export default function Experience() {
           className="max-w-6xl mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Work Experience
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
               My professional journey and key achievements
             </p>
           </motion.div>
@@ -88,33 +88,33 @@ export default function Experience() {
                 <div className="flex flex-col md:flex-row md:items-start md:space-x-8">
                   <div className="md:w-1/3 mb-6 md:mb-0">
                     <div className="flex items-center mb-2">
-                      <Building className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      <Building className="h-5 w-5 text-accent mr-2" />
+                      <h3 className="text-xl font-semibold text-primary">
                         {exp.company}
                       </h3>
                     </div>
-                    <div className="flex items-center text-slate-600 dark:text-slate-400 mb-2">
+                    <div className="flex items-center text-muted mb-2">
                       <Calendar className="h-4 w-4 mr-2" />
                       <span className="text-sm">{exp.duration}</span>
                     </div>
-                    <div className="flex items-center text-slate-600 dark:text-slate-400">
+                    <div className="flex items-center text-muted">
                       <MapPin className="h-4 w-4 mr-2" />
                       <span className="text-sm">{exp.location}</span>
                     </div>
                   </div>
                   
                   <div className="md:w-2/3">
-                    <h4 className="text-lg font-medium text-slate-900 dark:text-white mb-2">
+                    <h4 className="text-lg font-medium text-primary mb-2">
                       {exp.position}
                     </h4>
-                    <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                    <p className="text-secondary mb-4 leading-relaxed">
                       {exp.description}
                     </p>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start">
-                          <div className="w-2 h-2 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                          <span className="text-slate-600 dark:text-slate-400 text-sm">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <span className="text-secondary text-sm">
                             {achievement}
                           </span>
                         </li>
@@ -124,7 +124,7 @@ export default function Experience() {
                 </div>
                 
                 {index < experiences.length - 1 && (
-                  <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-700 md:left-1/3 md:ml-4"></div>
+                  <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-700 md:left-1/3 md:ml-4"></div>
                 )}
               </motion.div>
             ))}

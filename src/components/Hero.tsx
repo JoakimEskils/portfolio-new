@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import Link from 'next/link';
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   const containerVariants = {
@@ -22,121 +21,104 @@ export default function Hero() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
+        duration: 0.6,
+        ease: "easeOut"
       }
     }
   };
 
+  const socialLinks = [
+    {
+      icon: <Github className="h-6 w-6" />,
+      href: 'https://github.com/joakimeskils',
+      label: 'GitHub'
+    },
+    {
+      icon: <Linkedin className="h-6 w-6" />,
+      href: 'https://www.linkedin.com/in/joakimeskils/',
+      label: 'LinkedIn'
+    },
+    {
+      icon: <Mail className="h-6 w-6" />,
+      href: 'mailto:joakim@example.com',
+      label: 'Email'
+    }
+  ];
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 dark:bg-blue-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-70 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-200 dark:bg-gray-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-70 animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-100 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-xl opacity-50 animate-pulse" style={{animationDelay: '4s'}}></div>
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#0f172a' }}>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }} />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+      >
+        {/* Profile Image */}
+        <motion.div variants={itemVariants} className="mb-8">
+          <div className="w-32 h-32 mx-auto rounded-full flex items-center justify-center shadow-2xl" style={{ background: 'linear-gradient(135deg, #2563eb, #3b82f6)' }}>
+            <span className="text-4xl font-bold text-white">JE</span>
+          </div>
+        </motion.div>
+
+        {/* Main Content */}
+        <motion.div variants={itemVariants} className="mb-12">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#f1f5f9' }}>
+            Joakim Eskils
+          </h1>
+          <h2 className="text-2xl md:text-3xl mb-8 font-light" style={{ color: '#cbd5e1' }}>
+            Software Engineer
+          </h2>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#94a3b8' }}>
+            Building scalable backend systems and database solutions for enterprise applications. 
+            Specializing in functional programming, distributed systems, and modern web technologies.
+          </p>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div variants={itemVariants} className="flex justify-center space-x-6 mb-16">
+          {socialLinks.map((link, index) => (
+            <motion.a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 rounded-full transition-all duration-300 hover:scale-110"
+              style={{ 
+                background: 'rgba(2, 6, 23, 0.1)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(30, 41, 59, 0.2)'
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={link.label}
+            >
+              <div className="transition-colors" style={{ color: '#cbd5e1' }}>
+                {link.icon}
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        {/* Scroll Indicator */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center max-w-4xl mx-auto"
+          variants={itemVariants}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">
-              Software Engineer
-            </span>
-          </motion.div>
-
-          <motion.h1 
-            variants={itemVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white mb-6 leading-tight"
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            style={{ color: '#94a3b8' }}
           >
-            Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-              Joakim Eskils
-            </span>
-          </motion.h1>
-
-          <motion.p 
-            variants={itemVariants}
-            className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-4 font-medium"
-          >
-            Software Engineer at Bricco AB
-          </motion.p>
-
-          <motion.p 
-            variants={itemVariants}
-            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
-            Passionate about server-side development, database management, functional programming, 
-            and distributed systems architecture. Building scalable solutions with modern technologies.
-          </motion.p>
-
-          <motion.div 
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-          >
-            <Link href="/portfolio" className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 group">
-              View My Portfolio
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link href="/portfolio#contact" className="inline-flex items-center justify-center rounded-lg px-6 py-3 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500">
-              Get In Touch
-            </Link>
-          </motion.div>
-
-          <motion.div 
-            variants={itemVariants}
-            className="flex justify-center space-x-6"
-          >
-            <a
-              href="https://github.com/joakimeskils"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-4 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50"
-              aria-label="GitHub"
-            >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Github className="h-6 w-6 text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors relative z-10" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/joakimeskils/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-4 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50"
-              aria-label="LinkedIn"
-            >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Linkedin className="h-6 w-6 text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors relative z-10" />
-            </a>
-            <a
-              href="mailto:joakim@example.com"
-              className="group relative p-4 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200/50 dark:border-gray-700/50"
-              aria-label="Email"
-            >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Mail className="h-6 w-6 text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors relative z-10" />
-            </a>
+            <ArrowDown className="h-6 w-6" />
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-500 rounded-full flex justify-center">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1 h-3 bg-slate-400 dark:bg-slate-500 rounded-full mt-2"
-          />
-        </div>
       </motion.div>
     </section>
   );

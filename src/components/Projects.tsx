@@ -67,7 +67,7 @@ export default function Projects() {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-white dark:bg-slate-900">
+    <section ref={ref} className="py-16 md:py-24 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -76,10 +76,10 @@ export default function Projects() {
           className="max-w-6xl mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Featured Projects
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
               A showcase of my recent work and technical projects
             </p>
           </motion.div>
@@ -89,18 +89,18 @@ export default function Projects() {
               <motion.div
                 key={project.title}
                 variants={itemVariants}
-                className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200 hover:scale-105"
+                className="rounded-xl border border-slate-700 bg-slate-800 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-200 hover:scale-105"
               >
-                <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                  <span className="text-gray-500 dark:text-gray-400">Project Image</span>
+                <div className="h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
+                  <span className="text-muted font-medium">Project Image</span>
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+                  <h3 className="text-xl font-semibold text-primary mb-3">
                     {project.title}
                   </h3>
                   
-                  <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  <p className="text-secondary mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   
@@ -108,7 +108,7 @@ export default function Projects() {
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900 rounded-full"
+                        className="px-2 py-1 text-xs font-medium text-secondary bg-slate-700 rounded-full"
                       >
                         {tech}
                       </span>
@@ -120,7 +120,7 @@ export default function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                      className="flex items-center text-muted hover:text-primary transition-colors"
                     >
                       <Github className="h-4 w-4 mr-2" />
                       <span className="text-sm">Code</span>
@@ -129,7 +129,7 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                      className="flex items-center text-muted hover:text-primary transition-colors"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       <span className="text-sm">Live Demo</span>

@@ -13,10 +13,10 @@ const config: Config = {
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'slide-in-left': 'slideInLeft 0.5s ease-out',
-        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'fade-in': 'fadeIn 0.3s ease-in-out', // Faster
+        'slide-up': 'slideUp 0.3s ease-out', // Faster
+        'slide-in-left': 'slideInLeft 0.3s ease-out', // Faster
+        'slide-in-right': 'slideInRight 0.3s ease-out', // Faster
         'bounce-slow': 'bounce 2s infinite',
         'pulse-slow': 'pulse 3s infinite',
       },
@@ -26,22 +26,22 @@ const config: Config = {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '0%': { transform: 'translateY(10px)', opacity: '0' }, // Reduced movement
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         slideInLeft: {
-          '0%': { transform: 'translateX(-20px)', opacity: '0' },
+          '0%': { transform: 'translateX(-10px)', opacity: '0' }, // Reduced movement
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         slideInRight: {
-          '0%': { transform: 'translateX(20px)', opacity: '0' },
+          '0%': { transform: 'translateX(10px)', opacity: '0' }, // Reduced movement
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
       },
     },
   },
   plugins: [],
-  darkMode: 'class',
+  // darkMode: 'class', // Removed for Tailwind v4
 };
 
 export default config;
