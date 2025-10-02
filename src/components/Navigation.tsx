@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);

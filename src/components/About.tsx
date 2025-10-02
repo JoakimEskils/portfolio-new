@@ -74,7 +74,7 @@ export default function About() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {expertise.map((item, index) => (
+            {expertise.map((item) => (
               <motion.div
                 key={item.title}
                 variants={itemVariants}

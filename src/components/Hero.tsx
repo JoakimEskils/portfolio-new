@@ -21,8 +21,7 @@ export default function Hero() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.6
       }
     }
   };
@@ -88,7 +87,7 @@ export default function Hero() {
 
         {/* Social Links */}
         <motion.div variants={itemVariants} className="flex justify-center space-x-6 mb-16">
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link) => (
             <motion.a
               key={link.label}
               href={link.href}

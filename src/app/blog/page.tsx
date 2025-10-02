@@ -27,7 +27,7 @@ export default function Blog() {
           </h2>
           
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            I'm working on creating valuable content about software engineering, 
+            II'mapos;m working on creating valuable content about software engineering, 
             functional programming, distributed systems, and my experiences in the tech industry.
           </p>
           

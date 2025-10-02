@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
           
           <div className="flex space-x-6">
-            {socialLinks.map((link, index) => (
+            {socialLinks.map((link) => (
               <motion.a
                 key={link.label}
                 href={link.href}

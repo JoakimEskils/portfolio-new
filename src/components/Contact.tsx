@@ -81,7 +81,7 @@ export default function Contact() {
               Get In Touch
             </h2>
             <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-              Let's discuss how we can work together to build something amazing
+              LetLet'sapos;s discuss how we can work together to build something amazing
             </p>
           </motion.div>
 
