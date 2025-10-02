@@ -62,8 +62,12 @@ export default function Hero() {
       >
         {/* Profile Image */}
         <motion.div variants={itemVariants} className="mb-8">
-          <div className="w-32 h-32 mx-auto rounded-full flex items-center justify-center shadow-2xl" style={{ background: 'linear-gradient(135deg, #2563eb, #3b82f6)' }}>
-            <span className="text-4xl font-bold text-white">JE</span>
+          <div className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white/20">
+            <img 
+              src="/profile.jpg" 
+              alt="Joakim Eskils" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 
