@@ -31,38 +31,38 @@ export default function Projects() {
     }
   };
 
-  const projects = [
+    const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and inventory management.',
+      title: 'Zebrafish Eye Segmentation (Deep Learning)',
+      description: 'Deep learning-based image segmentation targeting zebrafish eyes using Deeplab neural network architecture. Published research work achieving 95.88% accuracy with data augmentation.',
       image: '/api/placeholder/400/250',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
-      github: 'https://github.com/joakimeskils/ecommerce',
-      live: 'https://ecommerce-demo.com'
+      technologies: ['Deep Learning', 'Deeplab', 'Computer Vision', 'Image Segmentation', 'Python', 'Neural Networks'],
+      github: 'https://github.com/joakimeskils',
+      live: ''
     },
     {
-      title: 'Real-time Chat Application',
-      description: 'A real-time messaging application built with Elixir Phoenix and WebSockets. Supports multiple chat rooms, file sharing, and user presence indicators.',
+      title: 'Haskell Animation',
+      description: 'Continuous Animation Rendering in Haskell. A hobby project exploring functional programming concepts in graphics rendering and animation systems.',
       image: '/api/placeholder/400/250',
-      technologies: ['Elixir', 'Phoenix', 'WebSockets', 'PostgreSQL', 'LiveView'],
-      github: 'https://github.com/joakimeskils/chat-app',
-      live: 'https://chat-demo.com'
+      technologies: ['Haskell', 'Graphics', 'Functional Programming', 'Animation'],
+      github: 'https://github.com/joakimeskils',
+      live: ''
     },
     {
-      title: 'Data Analytics Dashboard',
-      description: 'A comprehensive analytics dashboard for tracking business metrics. Built with React, D3.js, and a robust backend API.',
+      title: 'Elixir Phoenix Chat Application',
+      description: 'Simple distributed chat application using Elixir Phoenix. Used for presentation at work, demonstrating real-time communication and distributed systems patterns.',
       image: '/api/placeholder/400/250',
-      technologies: ['React', 'D3.js', 'Node.js', 'MongoDB', 'Chart.js'],
-      github: 'https://github.com/joakimeskils/analytics',
-      live: 'https://analytics-demo.com'
+      technologies: ['Elixir', 'Phoenix', 'WebSockets', 'Distributed Systems', 'Real-time'],
+      github: 'https://github.com/joakimeskils',
+      live: ''
     },
     {
-      title: 'Microservices Architecture',
-      description: 'A distributed system architecture using Docker containers, API gateways, and service discovery. Demonstrates scalable backend design patterns.',
+      title: 'Blackjack Simulation in Haskell',
+      description: 'Interactive blackjack game written in Haskell using stack. Demonstrates functional programming principles, game logic implementation, and pure functional design.',
       image: '/api/placeholder/400/250',
-      technologies: ['Docker', 'Kubernetes', 'Node.js', 'Redis', 'Nginx'],
-      github: 'https://github.com/joakimeskils/microservices',
-      live: 'https://microservices-demo.com'
+      technologies: ['Haskell', 'Stack', 'Functional Programming', 'Game Development'],
+      github: 'https://github.com/joakimeskils',
+      live: ''
     }
   ];
 

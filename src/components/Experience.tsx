@@ -31,31 +31,54 @@ export default function Experience() {
     }
   };
 
-  const experiences = [
+    const experiences = [
     {
       company: 'Bricco AB',
       position: 'Software Engineer',
-      duration: '2023 - Present',
+      duration: 'Oct 2022 - Present',
       location: 'Stockholm, Sweden',
-      description: 'Developing scalable backend systems and database solutions for enterprise applications.',
+      description: 'Consultancy in software engineering and architecture.',
       achievements: [
-        'Built high-performance REST APIs serving millions of requests',
-        'Optimized database queries resulting in 40% performance improvement',
-        'Implemented microservices architecture for better scalability',
-        'Led technical decisions for new feature development'
+        'Functioning as a software architect and engineering consultant towards several client projects',
+        'Full-stack development, cloud infrastructure, database management, and software architecture design',
+        'Working with Node.js, Express, React.js, TypeScript, and Apollo (GraphQL)',
+        'Using MongoDB (NoSQL Database), CircleCI (CI/CD), Material UI, Google Cloud Platform, Github Actions, Jira, Bitbucket, and Vercel'
       ]
     },
     {
-      company: 'Previous Company',
-      position: 'Full-Stack Developer',
-      duration: '2021 - 2023',
+      company: 'Klarna',
+      position: 'Software Engineer',
+      duration: 'Nov 2021 - Oct 2022',
       location: 'Stockholm, Sweden',
-      description: 'Developed full-stack applications using modern web technologies.',
+      description: 'Swedish fintech company providing online financial services such as payments for online storefronts and direct payments.',
       achievements: [
-        'Developed responsive web applications using React and Node.js',
-        'Collaborated with cross-functional teams to deliver projects on time',
-        'Implemented automated testing strategies',
-        'Mentored junior developers'
+        'Handling the issuing and lifecycle of credit and debit cards',
+        'Developing microservices in Scala using functional programming paradigm (Typelevel-stack: cats and fs2)',
+        'Building serverless AWS Lambdas in Haskell',
+        'Working with Terraform, Ansible, Docker, Http4s, AWS (RDS, Route53, EC2, S3), Jenkins, Kafka, Event-sourcing, TypeScript/React.js, PostgreSQL, and Nix'
+      ]
+    },
+    {
+      company: 'Bricco AB',
+      position: 'Software Developer',
+      duration: 'Jun 2020 - Sep 2021',
+      location: 'Stockholm, Sweden',
+      description: 'Consultancy in software engineering and architecture.',
+      achievements: [
+        'Consultant in a team towards projects focused on full-stack development',
+        'Cloud infrastructure, database management, and software architecture',
+        'Using Node.js, Express, React.js, TypeScript, and Apollo (GraphQL)',
+        'Working with MongoDB, CircleCI, Material UI, Google Cloud Platform, Github Actions, Jira, Bitbucket, and Vercel'
+      ]
+    },
+    {
+      company: 'Saab',
+      position: 'Software Engineer Intern',
+      duration: 'Jun 2019 - Aug 2019',
+      location: 'Järfälla, Sweden',
+      description: 'Serving the global market with world-leading products, services and solutions from military defence to civil security.',
+      achievements: [
+        'Developed support systems for electronic warfare and airborne platforms using Java'
       ]
     }
   ];
@@ -81,7 +104,7 @@ export default function Experience() {
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
-                key={exp.company}
+                key={`${exp.company}-${exp.position}`}
                 variants={itemVariants}
                 className="relative"
               >

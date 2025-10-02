@@ -31,26 +31,26 @@ export default function About() {
     }
   };
 
-  const expertise = [
+    const expertise = [
     {
       icon: <Server className="h-6 w-6" />,
       title: 'Backend Development',
-      description: 'Building scalable server-side applications with Node.js, Express, and Phoenix Framework'
+      description: 'Building scalable server-side applications with Node.js, Express, Scala, and Haskell for enterprise-level systems'
     },
     {
       icon: <Database className="h-6 w-6" />,
       title: 'Database Management',
-      description: 'Designing and optimizing PostgreSQL and MongoDB databases for high-performance applications'
+      description: 'Expert in PostgreSQL and MongoDB setup, configuration, hosting in AWS and MongoDB Atlas, with advanced queries and aggregations'
     },
     {
       icon: <Code className="h-6 w-6" />,
       title: 'Functional Programming',
-      description: 'Expertise in Haskell and Elixir for building robust, maintainable software systems'
+      description: 'Proficient in Scala with Typelevel-stack (cats and fs2) and Haskell for building robust, maintainable software systems'
     },
     {
       icon: <Zap className="h-6 w-6" />,
       title: 'System Architecture',
-      description: 'Designing distributed systems and microservices architectures for enterprise applications'
+      description: 'Designing distributed systems, microservices architectures, and cloud infrastructure for scalable enterprise applications'
     }
   ];
 
@@ -68,8 +68,8 @@ export default function About() {
               About Me
             </h2>
             <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-              Software Engineer at Bricco AB specializing in server-side development, database management, 
-              functional programming, and distributed systems architecture.
+              Software Engineer at Bricco AB with 3 years of professional experience. I specialize in 
+              server-side development, database management, functional programming, and distributed systems architecture.
             </p>
           </motion.div>
 

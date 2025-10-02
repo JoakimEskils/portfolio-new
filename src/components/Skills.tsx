@@ -30,30 +30,30 @@ export default function Skills() {
     }
   };
 
-  const skillCategories = [
+    const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: ['TypeScript', 'JavaScript', 'Haskell', 'Elixir', 'Python', 'Scala', 'Go', 'Rust']
+      skills: ['TypeScript', 'JavaScript', 'Scala', 'Haskell', 'Node.js', 'Java', 'Python']
     },
     {
-      title: 'Backend Technologies',
-      skills: ['Node.js', 'Express.js', 'Phoenix Framework', 'REST APIs', 'GraphQL', 'Microservices', 'Serverless', 'WebSockets']
+      title: 'Frontend Development',
+      skills: ['React.js', 'Material UI', 'Apollo (GraphQL)', 'REST APIs', 'TypeScript', 'Next.js', 'Tailwind CSS']
+    },
+    {
+      title: 'Backend & Server-Side',
+      skills: ['Node.js', 'Express', 'GraphQL', 'Scala', 'Haskell', 'Typelevel Stack (cats, fs2)', 'Http4s', 'REST APIs']
     },
     {
       title: 'Databases',
-      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Database Design', 'Query Optimization', 'Data Modeling', 'SQL', 'NoSQL']
+      skills: ['MongoDB', 'PostgreSQL', 'Database Setup & Configuration', 'AWS RDS', 'MongoDB Atlas', 'Advanced Queries & Aggregates', 'SQL', 'NoSQL']
     },
     {
-      title: 'Frontend Technologies',
-      skills: ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'HTML5', 'CSS3']
+      title: 'Cloud Infrastructure',
+      skills: ['AWS (RDS, Route53, EC2, S3)', 'Google Cloud Platform (GCP)', 'Docker', 'Terraform', 'Ansible', 'Vercel']
     },
     {
       title: 'DevOps & Tools',
-      skills: ['Docker', 'AWS', 'Git', 'Linux', 'CI/CD', 'Testing', 'Monitoring', 'Kubernetes']
-    },
-    {
-      title: 'Cloud & Infrastructure',
-      skills: ['AWS', 'Docker', 'Kubernetes', 'Terraform', 'Monitoring', 'Logging', 'Security', 'Performance']
+      skills: ['CircleCI', 'Jenkins', 'Github Actions', 'Jira', 'Bitbucket', 'Kafka', 'Nix', 'Sbt', 'Git', 'CI/CD']
     }
   ];
 

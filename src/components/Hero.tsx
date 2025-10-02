@@ -73,11 +73,12 @@ export default function Hero() {
             Joakim Eskils
           </h1>
           <h2 className="text-2xl md:text-3xl mb-8 font-light" style={{ color: '#cbd5e1' }}>
-            Software Engineer
+            Software Engineer at Bricco AB
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#94a3b8' }}>
-            Building scalable backend systems and database solutions for enterprise applications. 
-            Specializing in functional programming, distributed systems, and modern web technologies.
+            Software engineer with 3 years of professional experience focusing on server-side development 
+            and database management. Particularly interested in functional programming, distributed systems,
+            and software architecture.
           </p>
         </motion.div>
 
