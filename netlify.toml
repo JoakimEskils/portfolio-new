@@ -1,5 +1,5 @@
 # Netlify configuration for Joakim Eskils Portfolio
-# Next.js 15 with App Router
+# Next.js 15 with App Router - Static Export
 
 [build]
   # Build command without Turbopack for Netlify compatibility
@@ -24,10 +24,6 @@
   
   # Ensure devDependencies are installed
   NODE_ENV = "development"
-
-# Next.js plugin for optimal deployment
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 # Production context settings
 [context.production]
@@ -89,13 +85,6 @@
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
-  conditions = {Role = ["admin"]}
-
-# Redirect for portfolio page
-[[redirects]]
-  from = "/portfolio"
-  to = "/portfolio"
   status = 200
 
 # Functions directory (if you add serverless functions later)

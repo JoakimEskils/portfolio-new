@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
     // Enable if you need these features
   },
   
+  // Disable automatic error pages for static export
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
+  },
+  
   // Asset prefix for CDN (optional)
   // assetPrefix: process.env.NODE_ENV === 'production' ? 'https://your-cdn-domain.com' : '',
   
