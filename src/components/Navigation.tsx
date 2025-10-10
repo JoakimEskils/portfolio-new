@@ -21,9 +21,8 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Portfolio', href: '/' },
+    // { name: 'Blog', href: '/blog' },
   ];
 
   return (

@@ -52,6 +52,13 @@ export default function Education() {
     ],
     accomplishments: [
       {
+        title: 'Bachelor Thesis: Zebrafish Eye Segmentation using Deep Learning',
+        date: '2020',
+        issuer: 'Uppsala University',
+        description: 'Developed a deep learning solution using Deeplab architecture for segmenting zebrafish eyes, achieving 95.88% accuracy. Published thesis on DiVA portal covering computer vision, neural networks, and biomedical applications.',
+        link: 'https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1509494&dswid=7777'
+      },
+      {
         title: 'Artificial Intelligence Competition',
         date: 'Oct 2019 - Dec 2019',
         description: 'Certificate for completing all demanding projects covering Hidden Markov Models, Reinforcement Learning, Neural Networks, and Deep Learning'
@@ -148,7 +155,18 @@ export default function Education() {
                       className="p-4 rounded-lg border border-slate-600 bg-slate-750 hover:bg-slate-700 transition-colors"
                     >
                       <h6 className="font-semibold text-primary mb-1">
-                        {accomplishment.title}
+                        {accomplishment.link ? (
+                          <a 
+                            href={accomplishment.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-accent transition-colors duration-200 cursor-pointer"
+                          >
+                            {accomplishment.title}
+                          </a>
+                        ) : (
+                          accomplishment.title
+                        )}
                       </h6>
                       <p className="text-xs text-muted mb-2">
                         {accomplishment.date}

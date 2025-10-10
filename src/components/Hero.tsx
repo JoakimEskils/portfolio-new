@@ -39,7 +39,7 @@ export default function Hero() {
     },
     {
       icon: <Mail className="h-6 w-6" />,
-      href: 'mailto:joakim@example.com',
+      href: 'mailto:joakim@joakimeskils.com',
       label: 'Email'
     }
   ];
@@ -79,9 +79,8 @@ export default function Hero() {
             Software Engineer at Bricco AB
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" style={{ color: '#94a3b8' }}>
-            Software engineer with 3 years of professional experience focusing on server-side development 
-            and database management. Particularly interested in functional programming, distributed systems,
-            and software architecture.
+            Experienced software engineer with 5+ years of professional expertise specializing in server-side development 
+            and database management. Passionate about functional programming, distributed systems, and software architecture.
           </p>
         </motion.div>
 
@@ -115,13 +114,23 @@ export default function Hero() {
           variants={itemVariants}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
-          <motion.div
+          <motion.button
+            onClick={() => {
+              const nextSection = document.querySelector('#about-section');
+              if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="p-2 rounded-full hover:bg-slate-700/50 transition-colors duration-300 cursor-pointer"
             style={{ color: '#94a3b8' }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Scroll to next section"
           >
             <ArrowDown className="h-6 w-6" />
-          </motion.div>
+          </motion.button>
         </motion.div>
       </motion.div>
     </section>

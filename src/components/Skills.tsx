@@ -33,7 +33,7 @@ export default function Skills() {
     const skillCategories = [
     {
       title: 'Programming Languages',
-      skills: ['TypeScript', 'JavaScript', 'Scala', 'Haskell', 'Node.js', 'Java', 'Python']
+      skills: ['TypeScript', 'Scala', 'Haskell', 'Node.js', 'React.js','Java', 'Python', 'Go']
     },
     {
       title: 'Frontend Development',
@@ -45,15 +45,15 @@ export default function Skills() {
     },
     {
       title: 'Databases',
-      skills: ['MongoDB', 'PostgreSQL', 'Database Setup & Configuration', 'AWS RDS', 'MongoDB Atlas', 'Advanced Queries & Aggregates', 'SQL', 'NoSQL']
+      skills: ['MongoDB', 'PostgreSQL', 'AWS RDS', 'MySQL']
     },
     {
       title: 'Cloud Infrastructure',
-      skills: ['AWS (RDS, Route53, EC2, S3)', 'Google Cloud Platform (GCP)', 'Docker', 'Terraform', 'Ansible', 'Vercel']
+      skills: ['AWS (RDS, Route53, EC2, S3)', 'Google Cloud Platform (GCP)', 'Docker', 'Terraform', 'Ansible', 'Vercel', 'Azure']
     },
     {
       title: 'DevOps & Tools',
-      skills: ['CircleCI', 'Jenkins', 'Github Actions', 'Jira', 'Bitbucket', 'Kafka', 'Nix', 'Sbt', 'Git', 'CI/CD']
+      skills: ['CircleCI', 'Jenkins', 'Github Actions', 'Jira', 'Bitbucket', 'Kafka', 'Nix', 'Sbt', 'Git', 'Terraform', 'Datadog', 'Sentry']
     }
   ];
 

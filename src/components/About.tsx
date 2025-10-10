@@ -34,28 +34,28 @@ export default function About() {
     const expertise = [
     {
       icon: <Server className="h-6 w-6" />,
-      title: 'Backend Development',
-      description: 'Building scalable server-side applications with Node.js, Express, Scala, and Haskell for enterprise-level systems'
+      title: 'Cloud Architecture',
+      description: 'Designing and implementing robust, scalable cloud architectures across AWS, Azure, and GCP platforms, delivering enterprise-grade solutions that meet the highest standards of performance and reliability.'
     },
     {
       icon: <Database className="h-6 w-6" />,
-      title: 'Database Management',
-      description: 'Expert in PostgreSQL and MongoDB setup, configuration, hosting in AWS and MongoDB Atlas, with advanced queries and aggregations'
+      title: 'Data & Integration',
+      description: 'Experienced with MySQL, PostgreSQL, and MongoDB databases, designing efficient RESTful APIs, gRPC, and GraphQL systems that power seamless data flow across distributed architectures.'
     },
     {
       icon: <Code className="h-6 w-6" />,
-      title: 'Functional Programming',
-      description: 'Proficient in Scala with Typelevel-stack (cats and fs2) and Haskell for building robust, maintainable software systems'
+      title: 'AI-Powered Development',
+      description: 'Embracing the future of software development with cutting-edge AI tools like GitHub Copilot, Cursor, Claude, and MCP Servers to accelerate innovation.'
     },
     {
       icon: <Zap className="h-6 w-6" />,
-      title: 'System Architecture',
-      description: 'Designing distributed systems, microservices architectures, and cloud infrastructure for scalable enterprise applications'
+      title: 'Security & Governance',
+      description: 'Building trust through comprehensive security implementations and ensuring compliance with PCI, GDPR, NIS2, AI-Act, and other critical regulatory frameworks.'
     }
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-slate-800">
+    <section id="about-section" ref={ref} className="py-16 md:py-24 bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -68,8 +68,10 @@ export default function About() {
               About Me
             </h2>
             <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-              Software Engineer at Bricco AB with 3 years of professional experience. I specialize in 
-              server-side development, database management, functional programming, and distributed systems architecture.
+              Passionate Software Engineer with 5+ years of experience architecting and building secure, 
+              scalable solutions. I thrive on transforming complex business requirements into robust 
+              distributed systems using Go, Node.js, and React.js, while ensuring enterprise-grade security 
+              and regulatory compliance across modern infrastructure.
             </p>
           </motion.div>
 

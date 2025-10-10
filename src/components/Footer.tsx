@@ -19,7 +19,7 @@ export default function Footer() {
     },
     {
       icon: <Mail className="h-5 w-5" />,
-      href: 'mailto:joakim@example.com',
+      href: 'mailto:joakim@joakimeskils.com',
       label: 'Email'
     }
   ];
