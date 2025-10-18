@@ -35,7 +35,7 @@ export default function About() {
     {
       icon: <Server className="h-6 w-6" />,
       title: 'Cloud Architecture',
-      description: 'Designing and implementing robust, scalable cloud architectures across AWS, Azure, and GCP platforms, delivering enterprise-grade solutions that meet the highest standards of performance and reliability.'
+      description: 'Designing and implementing robust, scalable cloud architectures across AWS, Azure, and GCP platforms.'
     },
     {
       icon: <Database className="h-6 w-6" />,
@@ -45,7 +45,7 @@ export default function About() {
     {
       icon: <Code className="h-6 w-6" />,
       title: 'AI-Powered Development',
-      description: 'Embracing the future of software development with cutting-edge AI tools like GitHub Copilot, Cursor, Claude, and MCP Servers to accelerate innovation.'
+      description: 'Embracing the future of software development with cutting-edge AI tools like GitHub Copilot, Cursor, Claude, and MCP Servers.'
     },
     {
       icon: <Zap className="h-6 w-6" />,
