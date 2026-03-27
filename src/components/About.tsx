@@ -1,102 +1,106 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Code, Database, Server, Zap } from 'lucide-react';
-
 export default function About() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.05
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 10, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
-
-    const expertise = [
-    {
-      icon: <Server className="h-6 w-6" />,
-      title: 'Cloud Architecture',
-      description: 'Designing and implementing robust, scalable cloud architectures across AWS, Azure, and GCP platforms.'
-    },
-    {
-      icon: <Database className="h-6 w-6" />,
-      title: 'Data & Integration',
-      description: 'Experienced with MySQL, PostgreSQL, and MongoDB databases, designing efficient RESTful APIs, gRPC, and GraphQL systems that power seamless data flow across distributed architectures.'
-    },
-    {
-      icon: <Code className="h-6 w-6" />,
-      title: 'AI-Powered Development',
-      description: 'Embracing the future of software development with cutting-edge AI tools like GitHub Copilot, Cursor, Claude, and MCP Servers.'
-    },
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: 'Security & Governance',
-      description: 'Building trust through comprehensive security implementations and ensuring compliance with PCI, GDPR, NIS2, AI-Act, and other critical regulatory frameworks.'
-    }
-  ];
-
   return (
-    <section id="about-section" ref={ref} className="py-16 md:py-24 bg-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="max-w-6xl mx-auto"
+    <section
+      id="about"
+      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      aria-label="About me"
+    >
+      {/* Mobile section heading */}
+      <div
+        className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+        style={{ backgroundColor: "rgba(10, 25, 47, 0.85)" }}
+      >
+        <h2
+          className="text-sm font-bold uppercase tracking-widest lg:sr-only"
+          style={{ color: "#ccd6f6" }}
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              About Me
-            </h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-              Passionate Software Engineer with 5+ years of experience architecting and building secure, 
-              scalable solutions. I thrive on transforming complex business requirements into robust 
-              distributed systems using Go, Node.js, and React.js, while ensuring enterprise-grade security 
-              and regulatory compliance across modern infrastructure.
-            </p>
-          </motion.div>
+          About
+        </h2>
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {expertise.map((item) => (
-              <motion.div
-                key={item.title}
-                variants={itemVariants}
-                className="p-6 rounded-xl border border-slate-700 bg-gradient-to-br from-slate-800 to-slate-900 hover:shadow-lg transition-all duration-200 hover:scale-105"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-blue-600 text-primary mr-4">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-primary">
-                    {item.title}
-                  </h3>
-                </div>
-                <p className="text-secondary leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+      <div className="space-y-4" style={{ color: "#8892b0" }}>
+        <p>
+          I&apos;m a software engineer based in{" "}
+          <span style={{ color: "#ccd6f6" }} className="font-medium">
+            Stockholm, Sweden
+          </span>
+          , with a focus on backend systems, distributed architecture, and
+          functional programming. Currently at{" "}
+          <a
+            href="https://bricco.se"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium transition-colors duration-200"
+            style={{ color: "#ccd6f6" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#64ffda")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#ccd6f6")}
+          >
+            Bricco AB
+          </a>
+          , where I architect and build robust backend services for financial
+          and enterprise systems.
+        </p>
+
+        <p>
+          Before that, I spent a year at{" "}
+          <a
+            href="https://klarna.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium transition-colors duration-200"
+            style={{ color: "#ccd6f6" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#64ffda")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#ccd6f6")}
+          >
+            Klarna
+          </a>{" "}
+          working on card issuing, building and maintaining business-critical
+          systems within the{" "}
+          <span style={{ color: "#ccd6f6" }} className="font-medium">
+            PCI DSS
+          </span>{" "}
+          compliance boundary. That experience gave me a deep appreciation for
+          the rigour required in regulated financial environments, where
+          correctness and security are non-negotiable.
+        </p>
+
+        <p>
+          My work spans the full stack, from system architecture and backend
+          services to frontend interfaces, and I have hands-on experience
+          shipping{" "}
+          <span style={{ color: "#ccd6f6" }} className="font-medium">
+            SaaS products
+          </span>{" "}
+          end-to-end. I&apos;m deeply interested in{" "}
+          <span style={{ color: "#ccd6f6" }} className="font-medium">
+            card payments
+          </span>
+          ,{" "}
+          <span style={{ color: "#ccd6f6" }} className="font-medium">
+            financial systems
+          </span>
+          , and the engineering challenges of keeping mission-critical flows
+          reliable at scale. I hold a B.Sc. in Computer Science &amp;
+          Engineering from{" "}
+          <a
+            href="https://uu.se"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium transition-colors duration-200"
+            style={{ color: "#ccd6f6" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#64ffda")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#ccd6f6")}
+          >
+            Uppsala University
+          </a>
+          .
+        </p>
+
+        <p>
+          I lean heavily on AI tooling like Claude and Cursor to maximise
+          throughput and stay in flow. Pairing strong engineering fundamentals
+          with the right AI tools lets me move fast without sacrificing quality.
+        </p>
       </div>
     </section>
   );

@@ -1,178 +1,163 @@
-'use client';
+import { ArrowUpRight } from "lucide-react";
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Calendar, MapPin, Building } from 'lucide-react';
+const experiences = [
+  {
+    period: "Oct 2022 — Present",
+    title: "Software Engineer",
+    company: "Bricco AB",
+    description:
+      "Architect and build backend services and integrations for financial and enterprise systems. Lead technical decisions across data pipelines, API design, and cloud infrastructure. Work closely with cross-functional teams to deliver high-reliability solutions.",
+    skills: ["TypeScript", "Node.js", "Python", "Next.js", "PostgreSQL", "AWS", "GCP", "Docker", "GraphQL"],
+    link: "https://bricco.se",
+  },
+  {
+    period: "Nov 2021 — Oct 2022",
+    title: "Software Engineer",
+    company: "Klarna",
+    description:
+      "Worked on card issuing within Klarna's PCI DSS compliance boundary. Built and maintained business-critical backend services handling card lifecycle management and transaction flows. Operated in a highly regulated environment where correctness, auditability, and security were paramount.",
+    skills: ["Scala", "Kafka", "PostgreSQL", "AWS", "Kubernetes", "PCI DSS", "GCP"],
+    link: "https://klarna.com",
+  },
+  {
+    period: "Jun 2020 — Sep 2021",
+    title: "Software Developer",
+    company: "Bricco AB",
+    description:
+      "Full-stack development across multiple client projects. Designed RESTful APIs, database schemas, and frontend interfaces. Worked with modern JavaScript frameworks alongside server-side Node.js services.",
+    skills: ["TypeScript", "React", "Node.js", "Python", "PostgreSQL", "REST APIs"],
+    link: "https://bricco.se",
+  },
+  {
+    period: "Apr 2020 — Aug 2021",
+    title: "ML Engineer",
+    company: "Bazaro",
+    description:
+      "Developed machine learning pipelines and data processing systems for e-commerce recommendation and analytics. Designed data collection workflows and experimented with model architectures for product classification and demand forecasting.",
+    skills: ["Python", "PostgreSQL", "Azure", "Docker"],
+    link: null,
+  },
+  {
+    period: "Jun — Aug 2019",
+    title: "Software Engineer Intern",
+    company: "Saab",
+    description:
+      "Software development internship working on internal tooling and systems. Gained exposure to safety-critical software development practices and large-scale enterprise codebases.",
+    skills: ["Java"],
+    link: "https://saab.com",
+  },
+];
 
 export default function Experience() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.05
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 10, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
-
-    const experiences = [
-    {
-      company: 'Bricco AB',
-      position: 'Software Engineer',
-      duration: 'Oct 2022 - Present',
-      location: 'Stockholm, Sweden',
-      description: 'Consultancy in software engineering and architecture.',
-      achievements: [
-        'Functioning as a software architect and engineering consultant towards several client projects',
-        'Full-stack development, cloud infrastructure, database management, and software architecture design',
-        'Working with Node.js, Express, React.js, TypeScript, and Apollo (GraphQL)',
-        'Using MongoDB (NoSQL Database), CircleCI (CI/CD), Material UI, Google Cloud Platform, Github Actions, Jira, Bitbucket, and Vercel.'
-      ]
-    },
-    {
-      company: 'Klarna',
-      position: 'Software Engineer',
-      duration: 'Nov 2021 - Oct 2022',
-      location: 'Stockholm, Sweden',
-      description: 'Swedish fintech company providing online financial services such as payments for online storefronts and direct payments.',
-      achievements: [
-        'Handling the issuing and lifecycle of credit and debit cards',
-        'Developing microservices in Scala using functional programming paradigm (Typelevel-stack: cats and fs2)',
-        'Building serverless AWS Lambdas in Haskell',
-        'Working with Terraform, Ansible, Docker, Http4s, AWS (RDS, Route53, EC2, S3), Jenkins, Kafka, Event-sourcing, TypeScript/React.js, PostgreSQL, and Nix.'
-      ]
-    },
-    {
-      company: 'Bricco AB',
-      position: 'Software Developer',
-      duration: 'Jun 2020 - Sep 2021',
-      location: 'Stockholm, Sweden',
-      description: 'Consultancy in software engineering and architecture.',
-      achievements: [
-        'Consultant in a team towards projects focused on full-stack development',
-        'Cloud infrastructure, database management, and software architecture',
-        'Using Node.js, Express, React.js, TypeScript, and Apollo (GraphQL)',
-        'Working with MongoDB, CircleCI, Material UI, Google Cloud Platform, Github Actions, Jira, Bitbucket, and Vercel.'
-      ]
-    },
-    {
-      company: 'Bazaro',
-      position: 'Machine Learning Engineer',
-      duration: 'Apr 2020 - Aug 2021',
-      location: 'Stockholm, Sweden',
-      description: 'Developed and implemented machine learning solutions for predictive analytics and forecasting.',
-      achievements: [
-        'Developed and implemented a machine learning solution in Python and Java to generate forecasts',
-        'Leveraged data analysis and predictive modelling techniques for business intelligence',
-        'Used Azure for hosting and deploying machine learning models and data pipelines.'
-      ]
-    },
-    {
-      company: 'Saab',
-      position: 'Software Engineer Intern',
-      duration: 'Jun 2019 - Aug 2019',
-      location: 'Järfälla, Sweden',
-      description: 'Serving the global market with world-leading products, services and solutions from military defence to civil security.',
-      achievements: [
-        'Developed support systems for electronic warfare and airborne platforms using Java.'
-      ]
-    }
-  ];
-
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="max-w-6xl mx-auto"
+    <section
+      id="experience"
+      className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+      aria-label="Work experience"
+    >
+      {/* Mobile section heading */}
+      <div
+        className="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+        style={{ backgroundColor: "rgba(10, 25, 47, 0.85)" }}
+      >
+        <h2
+          className="text-sm font-bold uppercase tracking-widest lg:sr-only"
+          style={{ color: "#ccd6f6" }}
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-              Work Experience
-            </h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-              My professional journey and key achievements
-            </p>
-          </motion.div>
+          Experience
+        </h2>
+      </div>
 
-          <div className="space-y-6">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={`${exp.company}-${exp.position}`}
-                variants={itemVariants}
-                className="group relative"
-              >
-                <div className="p-6 rounded-xl border border-slate-700 bg-gradient-to-br from-slate-800 to-slate-900 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-slate-600">
-                  {/* Header Section */}
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
-                    <div className="mb-4 sm:mb-0">
-                      <div className="flex items-center mb-2">
-                        <div className="p-2 rounded-lg bg-blue-600 text-white mr-3">
-                          <Building className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold text-primary">
-                            {exp.company}
-                          </h3>
-                          <h4 className="text-lg font-medium text-accent">
-                            {exp.position}
-                          </h4>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex flex-col sm:items-end space-y-1">
-                      <div className="flex items-center text-muted">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span className="text-sm font-medium">{exp.duration}</span>
-                      </div>
-                      <div className="flex items-center text-muted">
-                        <MapPin className="h-4 w-4 mr-2" />
-                        <span className="text-sm">{exp.location}</span>
-                      </div>
-                    </div>
-                  </div>
+      <ol className="group/list">
+        {experiences.map((exp, i) => (
+          <li key={i} className="mb-12">
+            <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              {/* Hover card background */}
+              <div
+                className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-lg transition-all duration-300 lg:block lg:group-hover:opacity-100"
+                style={{
+                  backgroundColor: "rgba(100, 255, 218, 0.03)",
+                  boxShadow: "inset 0 1px 0 0 rgba(148,163,184,0.07)",
+                  opacity: 0,
+                }}
+              />
 
-                  {/* Description */}
-                  <p className="text-secondary mb-6 leading-relaxed text-base">
-                    {exp.description}
-                  </p>
+              {/* Period */}
+              <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide sm:col-span-2 sm:text-right" style={{ color: "#495670" }}>
+                {exp.period}
+              </header>
 
-                  {/* Responsibilities */}
-                  <div>
-                    <h5 className="text-sm font-semibold text-primary mb-3 uppercase tracking-wide">
-                      Responsibilities & Impact
-                    </h5>
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0 group-hover:bg-blue-400 transition-colors duration-300"></div>
-                      <p className="text-secondary text-sm leading-relaxed">
-                        {exp.achievements.join('. ')}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+              {/* Content */}
+              <div className="z-10 sm:col-span-6">
+                <h3 className="font-medium leading-snug">
+                  {exp.link ? (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="group/link inline-flex items-baseline gap-1 font-medium leading-tight transition-colors duration-200"
+                      style={{ color: "#ccd6f6" }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.color = "#64ffda")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.color = "#ccd6f6")
+                      }
+                    >
+                      <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
+                      <span>
+                        {exp.title} ·{" "}
+                        <span className="inline-block">
+                          {exp.company}
+                          <ArrowUpRight className="ml-0.5 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform duration-200 group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
+                        </span>
+                      </span>
+                    </a>
+                  ) : (
+                    <span style={{ color: "#ccd6f6" }}>
+                      {exp.title} · {exp.company}
+                    </span>
+                  )}
+                </h3>
+
+                <p className="mt-2 text-sm leading-normal" style={{ color: "#8892b0" }}>
+                  {exp.description}
+                </p>
+
+                <ul className="mt-2 flex flex-wrap gap-2" aria-label="Technologies used">
+                  {exp.skills.map((skill) => (
+                    <li key={skill}>
+                      <div
+                        className="flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5"
+                        style={{
+                          backgroundColor: "rgba(100, 255, 218, 0.08)",
+                          color: "#64ffda",
+                        }}
+                      >
+                        {skill}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-4">
+        <a
+          href="https://linkedin.com/in/joakimeskils"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="group/link inline-flex items-center gap-1 font-semibold leading-tight transition-colors duration-200"
+          style={{ color: "#ccd6f6" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#64ffda")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#ccd6f6")}
+        >
+          <span>View Full Résumé</span>
+          <ArrowUpRight className="ml-0.5 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform duration-200 group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
+        </a>
       </div>
     </section>
   );
