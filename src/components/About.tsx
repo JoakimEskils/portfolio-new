@@ -101,6 +101,108 @@ export default function About() {
           throughput and stay in flow. Pairing strong engineering fundamentals
           with the right AI tools lets me move fast without sacrificing quality.
         </p>
+
+        <div className="pt-4">
+          <p
+            className="mb-4 text-xs font-bold uppercase tracking-widest"
+            style={{ color: "#ccd6f6" }}
+          >
+            Technologies I work with
+          </p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {[
+              {
+                label: "Languages & Frameworks",
+                items: [
+                  "TypeScript",
+                  "React.js",
+                  "Next.js",
+                  "Node.js",
+                  "Express",
+                  "Apollo GraphQL",
+                  "Redux",
+                  "Http4s",
+                  "Scala",
+                  "Haskell",
+                  "Python",
+                  "Java",
+                ],
+              },
+              {
+                label: "Databases",
+                items: ["PostgreSQL", "MongoDB"],
+              },
+              {
+                label: "Cloud & Infrastructure",
+                items: [
+                  "AWS (EC2, RDS, S3, Route53)",
+                  "Google Cloud Platform",
+                  "Azure",
+                  "Vercel",
+                  "Docker",
+                  "Kubernetes",
+                  "Terraform",
+                  "Ansible",
+                  "Nix",
+                ],
+              },
+              {
+                label: "Architecture & Messaging",
+                items: ["Kafka", "Event Sourcing", "gRPC", "REST"],
+              },
+              {
+                label: "CI/CD & Tooling",
+                items: [
+                  "Jenkins",
+                  "CircleCI",
+                  "GitHub Actions",
+                  "Jira",
+                  "Bitbucket",
+                ],
+              },
+              {
+                label: "UI & Styling",
+                items: ["Tailwind CSS", "Material UI", "Chakra UI"],
+              },
+            ].map(({ label, items }) => (
+              <div key={label}>
+                <p
+                  className="mb-2 text-xs font-semibold uppercase tracking-wider"
+                  style={{ color: "#495670" }}
+                >
+                  {label}
+                </p>
+                <ul className="flex flex-wrap gap-1.5">
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded px-2 py-0.5 text-xs font-medium cursor-default transition-all duration-200"
+                      style={{
+                        backgroundColor: "rgba(100, 255, 218, 0.06)",
+                        color: "#8892b0",
+                        border: "1px solid rgba(100, 255, 218, 0.1)",
+                      }}
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget;
+                        el.style.backgroundColor = "rgba(100, 255, 218, 0.15)";
+                        el.style.color = "#64ffda";
+                        el.style.borderColor = "rgba(100, 255, 218, 0.4)";
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget;
+                        el.style.backgroundColor = "rgba(100, 255, 218, 0.06)";
+                        el.style.color = "#8892b0";
+                        el.style.borderColor = "rgba(100, 255, 218, 0.1)";
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
